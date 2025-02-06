@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sub Groub (5) Hypertension</title>
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        direction: rtl;
+        text-align: right;
+        line-height: 1.6;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("HTN.png") center/cover fixed;
+        color: #fff;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px 20px;
+      }
+
+      .content-box {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        margin: 20px 0;
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+        color: #333;
+      }
+
+      .content-box:hover {
+        transform: translateY(-5px);
+      }
+
+      h1 {
+        color: var(--primary-color);
+        font-size: 2.5em;
+        margin-bottom: 25px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: var(--secondary-color);
+        border-right: 4px solid var(--secondary-color);
+        padding-right: 15px;
+        margin: 25px 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        padding: 12px;
+        margin: 10px 0;
+        background: #f8f9fa;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      li:hover {
+        background: #e9ecef;
+        transform: translateX(10px);
+      }
+
+      .input-section {
+        margin-top: 30px;
+      }
+
+      .input-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      input {
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus {
+        border-color: var(--secondary-color);
+        outline: none;
+      }
+
+      button {
+        background: var(--secondary-color);
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      button:hover {
+        background: #2980b9;
+        transform: scale(1.05);
+      }
+
+      #result {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* التصميم المتجاوب */
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px 15px;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+
+        .input-group {
+          grid-template-columns: 1fr;
+        }
+
+        .content-box {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.8em;
+        }
+
+        h2 {
+          font-size: 1.4em;
+        }
+
+        button {
+          padding: 10px 20px;
+        }
+      }
+
+      /* تأثيرات إضافية */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .content-box {
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      /* شريط التمرير المخصص */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--secondary-color);
+        border-radius: 4px;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .stats-card {
+        animation: fadeIn 1s ease-out;
+      }
+
+      .who-button {
+        background-color: #0073e6;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .who-button:hover {
+        background-color: #005bb5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content-box">
+        <h1>ارتفاع ضغط الدم: التوعية والوقاية</h1>
+
+        <div class="animated-section">
+          <h2>📌 التعريف العلمي</h2>
+          <p>
+            مرض مزمن يحدث عندما يكون ضغط الدم على جدران الشرايين مرتفعًا بشكل
+            مستمر، مما قد يؤدي إلى مضاعفات خطيرة.
+          </p>
+        </div>
+
+        <div class="animated-section">
+          <h2>⚠️ الأعراض الرئيسية</h2>
+          <ul>
+            <li>دوار مستمر</li>
+            <li>خفقان قلب غير منتظم</li>
+            <li>اضطرابات بصرية</li>
+            <li>صعوبة في التنفس</li>
+            <li>صداع</li>
+            <li>نزيف الدم من الأنف</li>
+          </ul>
+        </div>
+
+        <div class="animated-section">
+          <h2>🛡️ نصائح الوقاية</h2>
+          <ul>
+            <li>الحد من تناول الملح (أقل من 5g/يوم)</li>
+            <li>ممارسة الرياضة 30 دقيقة يوميًا</li>
+            <li>الحفاظ على مؤشر كتلة الجسم تحت 25</li>
+            <li>فحص ضغط الدم شهريًا</li>
+          </ul>
+        </div>
+
+        <div class="input-section">
+          <h2>🩺 حاسبة ضغط الدم</h2>
+          <div class="input-group">
+            <input
+              type="number"
+              id="systolic"
+              placeholder="الضغط الانقباضي (mmHg)"
+            />
+            <input
+              type="number"
+              id="diastolic"
+              placeholder="الضغط الانبساطي (mmHg)"
+            />
+          </div>
+          <button onclick="checkBloodPressure()">تحليل النتائج</button>
+          <div id="result"></div>
+        </div>
+        <a
+          href="https://www.who.int/news-room/fact-sheets/detail/hypertension"
+          target="_blank"
+          class="who-button"
+        >
+          اقرأ المزيد على موقع منظمة الصحة العالمية
+        </a>
+
+        <div class="team-section">
+          <h2>👥 الفريق المشارك</h2>
+          <ul>
+           
+            <li>محمد المبروك سالم</li>
+            <li>امحمد غرس الله غريبي</li>
+            <li>أية فرج معتوق</li>
+            <li>الزهراء خليفة بريشة</li>
+          </ul>
+        </div>
+
+        <canvas id="hypertensionChart" width="400" height="200"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+          const ctx = document
+            .getElementById("hypertensionChart")
+            .getContext("2d");
+          const hypertensionChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: ["مصابون", "غير مدركين", "تحت السيطرة"],
+              datasets: [
+                {
+                  label: "إحصائيات ارتفاع ضغط الدم",
+                  data: [1280, 588, 269],
+                  backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                  ],
+                  borderColor: [
+                    "rgba(255, 99, 132, 1)",
+                    "rgba(54, 162, 235, 1)",
+                    "rgba(75, 192, 192, 1)",
+                  ],
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          });
+        </script>
+
+        <div class="supervisor">
+          <h2>إشراف</h2>
+          <p>الدكتور: [أحميد خليفة]</p>
+        </div>
+        <div class="stats-section">
+          <h2>إحصائيات حول ارتفاع ضغط الدم</h2>
+          <div class="stats-card">
+            <p>1.28 مليار شخص بالغ يعانون من ارتفاع ضغط الدم حول العالم .</p>
+          </div>
+          <div class="stats-card">
+            <p>46% من المصابين بارتفاع ضغط الدم لا يعرفون أنهم مصابون به .</p>
+          </div>
+          <div class="stats-card">
+            <p>
+              21% فقط من المصابين بارتفاع ضغط الدم لديهم الحالة تحت السيطرة .
+            </p>
+          </div>
+          <div class="faq-section">
+            <h2>الأسئلة الشائعة</h2>
+            <div class="faq-item">
+              <button class="faq-question">ما هو ارتفاع ضغط الدم؟</button>
+              <div class="faq-answer">
+                <p>
+                  ارتفاع ضغط الدم هو حالة يكون فيها ضغط الدم على جدران الشرايين
+                  مرتفعًا بشكل مستمر، مما قد يؤدي إلى مشاكل صحية خطيرة إذا لم
+                  يتم التحكم فيه .
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                كيف يمكن الوقاية من ارتفاع ضغط الدم؟
+              </button>
+              <div class="faq-answer">
+                <p>
+                  تشمل الوقاية تناول طعام صحي، ممارسة الرياضة بانتظام، وتجنب
+                  الإفراط في تناول الملح .
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function checkBloodPressure() {
+        const systolic = parseInt(document.getElementById("systolic").value);
+        const diastolic = parseInt(document.getElementById("diastolic").value);
+        const result = document.getElementById("result");
+
+        let classification = "";
+        let color = "";
+
+        if (systolic >= 180 || diastolic >= 120) {
+          classification = "🆘 أزمة ارتفاع ضغط - راجع طبيبك فورًا!";
+          color = "#e74c3c";
+        } else if (systolic >= 140 || diastolic >= 90) {
+          classification = "🔴 ارتفاع مرحلة ثانية";
+          color = "#c0392b";
+        } else if (systolic >= 130 || diastolic >= 80) {
+          classification = "🟠 ارتفاع مرحلة أولى";
+          color = "#e67e22";
+        } else if (systolic >= 120) {
+          classification = "🟡 مرحلة ما قبل الارتفاع";
+          color = "#f1c40f";
+        } else {
+          classification = "🟢 ضغط طبيعي - أحسنت!";
+          color = "#2ecc71";
+        }
+        document.querySelectorAll(".faq-question").forEach((button) => {
+          button.addEventListener("click", () => {
+            const answer = button.nextElementSibling;
+            answer.style.display =
+              answer.style.display === "block" ? "none" : "block";
+          });
+        });
+
+        result.innerHTML = `
+            <div style="background: ${color}; color: white; padding: 15px; border-radius: 8px;">
+                ${classification}<br>
+                <small>SYS: ${systolic} | DIA: ${diastolic}</small>
+            </div>
+        `;
+      }
+
+      // إضافة تأثيرات عند التمرير
+      window.addEventListener("scroll", () => {
+        document.body.style.backgroundPosition = `center ${
+          window.pageYOffset * 0.5
+        }px`;
+      });
+    </script>
+  </body>
+</html>
